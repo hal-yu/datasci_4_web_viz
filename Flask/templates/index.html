@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask Diabetes App</title>
+</head>
+<body>
+
+<h2>Diabetes Age-adjusted Prevalence in CA by County</h2>
+
+<form method="post">
+    <select name="county" onchange="this.form.submit()">
+        {% for county in counties %}
+        <option value="{{ county }}" {% if county == selected_county %} selected {% endif %}>{{ county }}</option>
+        {% endfor %}
+    </select>
+</form>
+
+<img src="data:image/png;base64,{{ img }}" alt="Diabetes Visualization" />
+
+</body>
+</html>
